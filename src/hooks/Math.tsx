@@ -10,9 +10,9 @@ import { BaseButton } from "../models/Button";
 import { handleCalculusData } from "../utils/accountCases";
 
 type MathProps = {
-  firstNumber: number[];
+  firstNumber: string[];
   operation: BaseButton;
-  secondNumber: number[];
+  secondNumber: string[];
   result: number;
   handleValueInsert: (value: BaseButton) => void;
   handleCalculus: () => void;
@@ -27,9 +27,9 @@ type AuthProviderProps = {
 const MathContext = createContext<MathProps>({} as MathProps);
 
 export const MathProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [firstNumber, setFirstNumber] = useState<number[]>([]);
+  const [firstNumber, setFirstNumber] = useState<string[]>([]);
   const [operation, setOperation] = useState<BaseButton>({} as BaseButton);
-  const [secondNumber, setSecondNumber] = useState<number[]>([]);
+  const [secondNumber, setSecondNumber] = useState<string[]>([]);
   const [result, setResult] = useState<number>(0);
 
   const deleteAllValues = (): void => {
@@ -47,11 +47,11 @@ export const MathProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
-  const fetchFirstNumber = (value: number): void => {
+  const fetchFirstNumber = (value: string): void => {
     setFirstNumber([...firstNumber, value]);
   };
 
-  const fetchSecondNumber = (value: number): void => {
+  const fetchSecondNumber = (value: string): void => {
     setSecondNumber([...secondNumber, value]);
   };
 
@@ -64,14 +64,15 @@ export const MathProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setResult(resultData);
   };
 
-  const convertNumberintoArray = (value: number): number[] =>
+  const convertNumberintoArray = (value: number): string[] =>
     String(value)
       .split("")
-      .map((number) => Number(number));
+      .map((number) => number);
 
   const addNewValue = (value: BaseButton): void => {
     //se apertar operação, deve-se mandar para o firstNumber o campo de result, e setar uma nova operação.
     const convertValue = convertNumberintoArray(result);
+    console.log(convertValue);
     setFirstNumber(convertValue);
     setOperation(value);
     setResult(0);
@@ -90,20 +91,26 @@ export const MathProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     if (value.operation === "Equal") {
       handleCalculus();
+      return;
     }
 
     if (result !== 0) {
       addNewValue(value);
+      return;
     }
 
     if (value.operation) return;
 
     if (Object.values(operation).length < 1) {
-      fetchFirstNumber(Number(value.text));
-      return;
+      if (value.text) {
+        fetchFirstNumber(value.text);
+        return;
+      }
     }
 
-    fetchSecondNumber(Number(value.text));
+    if (value.text) {
+      fetchSecondNumber(value.text);
+    }
   };
 
   return (
