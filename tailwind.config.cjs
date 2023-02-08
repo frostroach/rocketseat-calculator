@@ -18,13 +18,14 @@ module.exports = {
 
         purpleText: "#975DFA",
       },
+      //TODO CHECK LINEAR GRADIENT OCCURENCE
       backgroundColor: {
-        defaultButton:
-          "-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37",
-        lightPurpleButton:
-          "-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), #7F45E2",
-        darkPurpleButton:
-          "-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878",
+        defaultButton: " #2D2A37",
+        //"-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37",
+        lightPurpleButton: "#7F45E2",
+        //"-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), #7F45E2",
+        darkPurpleButton: "#462878",
+        // "-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878",
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],

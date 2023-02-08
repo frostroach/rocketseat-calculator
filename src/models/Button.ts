@@ -4,12 +4,20 @@ export type BaseButton = {
     | "bg-defaultButton"
     | "bg-lightPurpleButton"
     | "bg-darkPurpleButton";
-  icon?: SVGElement;
+  icon?: string;
   text?: string;
-  operation?: "Divide" | "Multiply" | "Percent" | "Minus" | "Plus" | "Equal";
+  operation?:
+    | "Divide"
+    | "Multiply"
+    | "Percent"
+    | "Minus"
+    | "Plus"
+    | "Equal"
+    | "Erase"
+    | "Delete";
   shadow:
     | "shadow-defaultButton"
     | "shadow-darkPurpleButton"
     | "shadow-lightPurpleButton";
-  textColor: "text-white" | "text-purpleText";
+  textColor?: "text-white" | "text-purpleText";
 };

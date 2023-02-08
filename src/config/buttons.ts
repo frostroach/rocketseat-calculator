@@ -15,6 +15,7 @@ export const buttonData: BaseButton[] = [
     text: "CE",
     textColor: "text-purpleText",
     type: "text",
+    operation: "Delete",
   },
   {
     background: "bg-defaultButton",
@@ -22,12 +23,14 @@ export const buttonData: BaseButton[] = [
     text: "C",
     textColor: "text-white",
     type: "text",
+    operation: "Erase",
   },
   {
     background: "bg-defaultButton",
     shadow: "shadow-defaultButton",
     icon: PercentSVG,
     type: "icon",
+    text: "%",
     operation: "Percent",
   },
   {
@@ -36,6 +39,7 @@ export const buttonData: BaseButton[] = [
     icon: DivisionSVG,
     type: "icon",
     operation: "Divide",
+    text: "/",
   },
   {
     background: "bg-defaultButton",
@@ -64,6 +68,7 @@ export const buttonData: BaseButton[] = [
     icon: XSVG,
     type: "icon",
     operation: "Multiply",
+    text: "x",
   },
   {
     background: "bg-defaultButton",
@@ -92,6 +97,7 @@ export const buttonData: BaseButton[] = [
     icon: MinusSVG,
     type: "icon",
     operation: "Minus",
+    text: "-",
   },
   {
     background: "bg-defaultButton",
@@ -120,6 +126,7 @@ export const buttonData: BaseButton[] = [
     icon: PlusSVG,
     type: "icon",
     operation: "Plus",
+    text: "+",
   },
   {
     background: "bg-defaultButton",
@@ -127,6 +134,7 @@ export const buttonData: BaseButton[] = [
     icon: PlusMinusSVG,
     type: "icon",
     operation: "Plus",
+    text: "+",
   },
   {
     background: "bg-defaultButton",
