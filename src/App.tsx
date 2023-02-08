@@ -27,7 +27,7 @@ const App: React.FC = () => {
     <div className="bg-background h-screen items-center justify-center flex">
       <div
         id="calculator-container"
-        className="bg-calculatorBackground h-3/4 w-96 rounded-3xl flex items-center justify-center shadow-inner flex-col p-10"
+        className="bg-calculatorBackground h-3/4 w-96 rounded-3xl flex items-center justify-center shadow-inner flex-col p-10 max[400px]:w-80"
       >
         {/* header da calculadora (valores e resultados) */}
 
